@@ -20,34 +20,12 @@ export class TasksService {
   constructor(
     @InjectRepository(TasksRepository) private tasksRepository: TasksRepository,
   ) {}
-  // private tasks: Task[] = [];
-  // getAllTasks(): Task[] {
-  //   return this.tasks;
-  // }
 
-  // updateTaskStatus(id: string, status: TaskStatus): Task {
-  //   // const taskIndex = this.tasks.findIndex((task) => task.id === id);
-  //   // this.tasks[taskIndex].status = status;
-  //   const task = this.getTaskById(id);
-  //   task.status = status;
-  //   return task;
-  // }
-  // getTasksWithFilters(getTasksFilterDto: GetTasksFilterDto): Task[] {
-  //   // return this.tasks.filter(filterBy(getTasksFilterDto));
-  //   let tasks: Task[] = this.getAllTasks();
-  //   const { search, status } = getTasksFilterDto;
-  //   if (search) {
-  //     const searchRegex = new RegExp(search, 'gi');
-  //     tasks = tasks.filter((task) => {
-  //       // return task.title.toLowerCase().includes(search.toLowerCase()) || task.description.toLowerCase().includes(search.toLowerCase());
-  //       return searchRegex.test(task.id) || searchRegex.test(task.description);
-  //     });
-  //   }
-  //   if (status) {
-  //     tasks = tasks.filter((task) => task.status === status);
-  //   }
-  //   return tasks;
-  // }
+  // using the query builder to implement getTasks()
+
+  getTasks(getTasksFilterDto: GetTasksFilterDto): Promise<Task[]> {
+    return this.tasksRepository.getTasks(getTasksFilterDto);
+  }
 
   async getTaskById(id: string): Promise<Task> {
     const found = await this.tasksRepository.findOne(id);

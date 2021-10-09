@@ -19,13 +19,10 @@ import { TasksService } from './tasks.service';
 export class TasksController {
   constructor(private tasksService: TasksService) {}
 
-  // @Get()
-  // getTasks(@Query() getTasksFilterDto: GetTasksFilterDto): Task[] {
-  //   if (Object.keys(getTasksFilterDto).length) {
-  //     return this.tasksService.getTasksWithFilters(getTasksFilterDto);
-  //   }
-  //   return this.tasksService.getAllTasks();
-  // }
+  @Get()
+  getTasks(@Query() getTasksFilterDto: GetTasksFilterDto): Promise<Task[]> {
+    return this.tasksService.getTasks(getTasksFilterDto);
+  }
 
   @Get('/:id')
   getTaskById(@Param('id') id: string): Promise<Task> {
@@ -42,20 +39,6 @@ export class TasksController {
   deleteTaskById(@Param('id') id: string): Promise<void> {
     return this.tasksService.deleteTaskById(id);
   }
-
-  // // @Post()
-  // // createTask(@Body() body): Task {
-  // //   console.log('body', body);
-  // //   return this.tasksService.createTask(body.title, body.description);
-  // // }
-
-  // // @Post()
-  // // createTask(
-  // //   @Body('title') title: string,
-  // //   @Body('description') description: string,
-  // // ): Task {
-  // //   return this.tasksService.createTask(title, description);
-  // // }
 
   @Patch('/:id/status')
   updateTaskStatus(
