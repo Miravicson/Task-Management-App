@@ -5,7 +5,7 @@ import {
   IsString,
   // ValidateIf,
 } from 'class-validator';
-import { TaskStatus } from '../tasks.model';
+import { TaskStatus } from '../task-status.enum';
 
 function dtoHasProperty(property: string): <T>(dto: T) => boolean {
   return (dto) => Object.keys(dto).includes(property);
