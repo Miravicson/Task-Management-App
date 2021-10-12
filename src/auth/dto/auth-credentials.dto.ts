@@ -1,5 +1,5 @@
 import { IsString, Matches, MaxLength, MinLength } from 'class-validator';
-import { getPasswordRegex } from 'src/constants';
+import { getPasswordRegex } from '../../constants';
 
 export class AuthCredentialsDto {
   @IsString()
