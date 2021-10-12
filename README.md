@@ -11,6 +11,7 @@
 * Jest
 * TypeORM
 * Express
+* JWT Authentication
 
 ## Installation
 
