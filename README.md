@@ -1,9 +1,9 @@
 # Miravicson Task Management App 
 ## Description
 
-[Heroku Backend Deploy](https://miravicson-task-management.herokuapp.com)
-[Swagger Docs](https://miravicson-task-management.herokuapp.com/docs)
-[GitHub Pages Frontend Deployment](https://miravicson.github.io/task-management-frontend)
+* [Heroku Backend Deploy](https://miravicson-task-management.herokuapp.com)
+* [Swagger Docs](https://miravicson-task-management.herokuapp.com/docs)
+* [GitHub Pages Frontend Deployment](https://miravicson.github.io/task-management-frontend)
 
 ## Tech Stack
 
