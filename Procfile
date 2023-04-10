@@ -1,1 +1,1 @@
-web: yarn start:prod
+web: ls -l && yarn build && ls -l dist && yarn start:prod
