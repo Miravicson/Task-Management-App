@@ -1,3 +1,4 @@
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import {
   IsEnum,
   // IsNotEmpty,
@@ -22,10 +23,12 @@ function dtoHasProperty(property: string): <T>(dto: T) => boolean {
 // }
 
 export class GetTasksFilterDto {
+  @ApiProperty({ enum: ['OPEN', 'IN_PROGRESS', 'DONE'] })
   @IsOptional()
   @IsEnum(TaskStatus)
   status?: TaskStatus;
 
+  @ApiPropertyOptional()
   @IsOptional()
   @IsString()
   search?: string;

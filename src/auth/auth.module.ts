@@ -23,15 +23,6 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
         expiresIn: 3600, // 1 hour
       }),
     }),
-    /**
-     * Synchronous initialization of module
-     */
-    // JwtModule.register({
-    //   secret: 'topSecret51',
-    //   signOptions: {
-    //     expiresIn: 3600, // 1 hour
-    //   },
-    // }),
     TypeOrmModule.forFeature([UsersRepository]),
   ],
   providers: [AuthService, JwtStrategy],
